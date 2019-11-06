@@ -1,0 +1,9 @@
+  title = 'RxjsDemo';
+  userForm = this.fb.group({
+    comment: ['', Validators.required],
+    name: ['', Validators.required],
+    email: ['', Validators.required, Validators.pattern('[^ @]*@[^ @]')]
+  });
+  onSubmit() {
+    console.log(this.userForm.value);
+  }

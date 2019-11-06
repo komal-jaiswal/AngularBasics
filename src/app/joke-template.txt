@@ -1,0 +1,14 @@
+<form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>Comments</label>
+  <textarea name="comment" cols="50" rows="20" formControlName="name">
+    <label>Name</label>
+  <input type="text" formControlName="name">
+  <label>Email</label>
+  <input type="text" formControlName="email">
+  <button type="submit">Submit</button>
+</form>
+<div class="card card-block" *ngFor="let joke of jokes">
+  <h4 class="card-title">{{joke.setup}}</h4>
+<p class="card-text">{{joke.punchline}}</p>
+</div>
+<button type="button" (click)="showPunchline()">Show punchline</button>

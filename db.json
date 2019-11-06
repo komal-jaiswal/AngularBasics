@@ -1,0 +1,53 @@
+{
+   "employees": [
+     {
+       "id": 1,
+       "name": "suchita",
+       "gender": "female",
+       "email": "dora@gmail.com",
+       "phoneNumber": "8793002667",
+       "contactPreference": "Phone",
+       "dateOfBirth": "1993-10-07T18:30:00.000Z",
+       "department": "HR",
+       "isActive": true,
+       "photoPath": "../assets/images/dora.jfif"
+     },
+     {
+       "id": 2,
+       "name": "John",
+       "gender": "male",
+       "email": "john@accenture.com",
+       "phoneNumber": "+4589076",
+       "contactPreference": "Email",
+       "dateOfBirth": "new Date('27/06/1990')",
+       "department": "Payroll",
+       "isActive": false,
+       "photoPath": "../assets/images/john.jpg"
+     },
+     {
+       "id": 3,
+       "name": "Amy",
+       "gender": "female",
+       "email": "amy.cornerstone.com",
+       "phoneNumber": "+459087",
+       "contactPreference": "Email",
+       "dateOfBirth": "new Date('07/03/1990')",
+       "department": "IT",
+       "isActive": true,
+       "photoPath": "../assets/images/Komal.jpg"
+     },
+     {
+       "id": 4,
+       "name": "Komal Jaiswal",
+       "gender": "female",
+       "email": "jaiswalkomal18@gmail.com",
+       "phoneNumber": "9970391390",
+       "contactPreference": "Email",
+       "dateOfBirth": "1993-10-07T18:30:00.000Z",
+       "department": "select",
+       "isActive": true,
+       "photoPath": "../assets/images/KomalJ.jpg",
+       "departments": "3"
+     }
+   ]
+ }

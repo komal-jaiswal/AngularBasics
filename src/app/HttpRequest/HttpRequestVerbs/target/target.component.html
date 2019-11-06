@@ -1,0 +1,52 @@
+<p (click)="getTableColumns()">target works!</p>
+<div *ngIf="visible" [@slideInOut]>This element will slide up and down when the value of 'visible' changes from true to
+  false and vice versa.</div>
+<div class="pointerCursor" *ngFor="let tabRow of tableColumns">
+  <app-table-column-display [tablerow]="tabRow"></app-table-column-display>
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Schema</label>
+    </div>
+    <div class="col-sm-5">
+      <label>Aggregation Type</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <div class="col-sm-5">
+      <mat-form-field>
+        <mat-label>Aggregate Functions</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let validationobj of aggregateFunctions">
+            {{validationobj}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+      <mat-form-field>
+        <mat-label>Column1</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let validationobj of aggregateFunctions">
+            {{validationobj}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field>
+        <mat-label>Column1</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let validationobj of aggregateFunctions">
+            {{validationobj}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

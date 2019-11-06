@@ -1,0 +1,27 @@
+<p>Heroes</p>
+<ng-template [ngIf]="hero">
+    <div>
+    <h3>{{hero.name}}</h3>
+    <div>id: {{hero.id}}</div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="hero.name">
+    <button (click)="back(hero)">Back to List</button>
+    <a [routerLink]="['/heros']" [queryParams]="{'test':'testparamerter','foo':'foo','id':hero.id}">back</a>
+</div>
+</ng-template>
+<!-- <ng-template #noHero>
+    <p>Hero doesn't exist with id {{heroId}}</p>
+</ng-template> -->
+<h1>the hero name is:{{hero && hero.name}}</h1>
+<span>type safe operator</span>
+<h1>{{hero?.name}}</h1>
+<ng-template [ngIf]="!hero">
+        <p>Hero doesn't exist with id {{heroId}}</p>
+</ng-template>
+<ng-container>
+    <p>only para in ng-container</p>
+</ng-container>
+<ng-template ngFor let-x [ngForOf]="['A','B','C']" let-ix="index">
+    {{x}}(<span>{{ix}}</span>)
+</ng-template>
+

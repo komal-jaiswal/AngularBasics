@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+            <th>Visible</th>
+        </div>
+        <div class="col-sm-1">
+            <th>Column Name</th>
+        </div>
+        <div class="col-sm-2">
+            <th>Data Type</th>
+        </div>
+        <div class="col-sm-2">
+            <th>InferredColumn</th>
+        </div>
+        <div class="col-sm-1">
+            <th>sampleValue</th>
+        </div>
+        <div class="col-sm-1">
+            <th>IsMandatory</th>
+        </div>
+        <div class="col-sm-2">
+            <th>Validate</th>
+        </div>
+        <div class="col-sm-1">
+            <th>Transform</th>
+        </div>
+    </div>
+    <div class="row" *ngIf="display">
+        <div class="col-sm-1">{{tablerow.visible}}</div>
+        <div class="col-sm-1">
+
+            <input type="text" class="form-control" name="actualColumn" [(ngModel)]="tablerow.actualColumn">
+        </div>
+        <div class="col-sm-2">
+            <!-- <mat-form-field>
+                <mat-label>dataType</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let validationobj of tablerow" [value]="validationobj.dataType">
+                        {{validationobj.dataType}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field> -->
+        </div>
+        <div class="col-sm-2">{{tablerow.inferredColumn}}</div>
+        <div class="col-sm-1">{{tablerow.sampleValue}}</div>
+        <div class="col-sm-1">
+            <mat-checkbox>Not Allowed</mat-checkbox>
+        </div>
+        <div class="col-sm-2">
+            <mat-form-field>
+                <mat-label>IP Address</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let validationobj of tablerow.validation" [value]="validationobj.validationId">
+                        {{validationobj.validationName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-1">
+            <div style="cursor: pointer;" (click)="schematicView()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>

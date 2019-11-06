@@ -1,0 +1,35 @@
+<h2>My Heroes</h2>
+<input type="text">
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero.id === selectedHero" [routerLink]="['/hero',hero.id]">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<!-- <div class="form-group">
+  <label>New Hours Per Day</label>
+  <div *ngFor='let days of daysPerweek; let i=index'>
+    <div class="checkbox"><label>
+        <input type='checkbox' name="{{days.day}}" value="{{days.day}}"
+          (change)="updateDays($event,days)"><span>{{days.day}}</span>
+      </label></div>
+     
+  </div>
+  <p>Selected day:{{selectedArr | json}}</p>
+</div> -->
+<div class="form-group">
+  <label>New Hours Per Day</label>
+  <div *ngFor='let days of daysPerweekGBR; let i=index'>
+    <div class="checkbox"><label>
+        <input type='checkbox' name="{{days}}" value="{{days}}"
+          (change)="updateDays($event,days)"><span>{{days}}</span>
+      </label></div>
+      <div *ngIf="selectedArr">
+        <div *ngFor="let day of selectedArr">Selected day:{{day}}</div>
+      </div>
+     
+  </div>
+</div>
+ 
+  
+
+<router-outlet></router-outlet>

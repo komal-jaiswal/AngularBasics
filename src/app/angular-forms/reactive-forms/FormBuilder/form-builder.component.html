@@ -1,0 +1,34 @@
+<p>form-builder works!</p>
+<div class="container">
+    <p>{{userForm.status}}</p>
+    <p>{{userForm.value | json}}</p>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="from-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+        </div>
+        <div class="form-group" formGroupName="Address">
+            <h3>Address</h3>
+            <label>Street:
+                <input type="text" formControlName="street" class="form-control">
+            </label>
+            <label>
+                City:
+                <input type="text" formControlName="city" class="form-control">
+            </label>
+            <label>
+                State:
+                <input type="text" formControlName="state" class="form-control">
+            </label>
+            <label>
+                Zip:
+                <input type="text" formControlName="zip" class="form-control">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
+    </form>
+</div>

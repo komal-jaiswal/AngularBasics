@@ -1,0 +1,7 @@
+<p>admin works!</p>
+<nav>
+<a [routerLink]="['/admin']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">dashboard</a>
+<a [routerLink]="['/crises']" routerLinkActive="active">manage-crises</a>
+<a [routerLink]="['/heroes']" routerLinkActive="active">manage-heroes</a>
+</nav>
+<router-outlet></router-outlet>

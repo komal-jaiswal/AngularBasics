@@ -1,0 +1,35 @@
+<p>fromgroup works!</p>
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        FormGroup Value:{{userForm.value | json}}
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="from-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+        </div>
+        <div class="form-group" formGroupName="Address">
+            <h3>Address</h3>
+            <label>Street:
+                <input type="text" formControlName="street" class="form-control">
+            </label>
+            <label>
+                City:
+                <input type="text" formControlName="city" class="form-control">
+            </label>
+            <label>
+                State:
+                <input type="text" formControlName="state" class="form-control">
+            </label>
+            <label>
+                Zip:
+                <input type="text" formControlName="zip" class="form-control">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
+        <button type="reset" class="btn btn-primary" (click)="userForm.reset()">Reset</button>
+        <button type="button" class="btn btn-success" (click)="update()">Patch Update</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<!-- 
+<table>
+    <thead>
+        <th>NAME</th>
+        <th>Index</th>
+        <th>IsEven</th>
+        <th>IsOdd</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of heroes;let i=index;let isEven=even;let isOdd=odd;trackBy: hero?.id">
+        <td>{{hero.name}}</td>
+        <td>{{i}}</td>
+        <td>{{isEven}}</td>
+        <td>{{isOdd}}</td>
+    </tr>
+    </tbody>
+</table> -->
+<nav>
+    <a routerLink='component-interaction' routerLinkActive="active">Component Interaction & viewencapsulation</a>
+    <a routerLink='content-projection' routerLinkActive="active">content projection</a>
+    <a routerLink='observables' routerLinkActive="active">Observables</a>
+    <a routerLink='custom-directive' routerLinkActive="active">Custom Directive</a>
+</nav>
+<router-outlet></router-outlet>

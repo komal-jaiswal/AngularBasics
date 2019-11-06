@@ -1,0 +1,23 @@
+.design{
+color:rgb(218, 174, 174);
+background-color: yellow;
+}
+a:link{
+    color: blue;
+}
+a:visited{
+    color: purple;
+}
+a:hover{
+    color: green;
+}
+a:active{
+    color: yellow;
+}
+nav a{
+    margin-right: 15px;
+    border-right: 1px solid black;
+}
+
+
+

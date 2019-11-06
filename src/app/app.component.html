@@ -1,0 +1,31 @@
+
+
+<h2>All Angular Concepts</h2>
+<input type="text" #data (keyup.enter)="onkeyup(data.value)" (blur)="onkeyup(data.value);data.value='' ">
+<button (click)="addItem(data.value)">Add</button>
+<ul *ngFor="let u of user">
+<li>{{u}}</li>
+</ul>
+<nav>
+   <a routerLink='/crises-center' routerLinkActive="active">Crises List</a>
+   <a routerLink='/heros' routerLinkActive='active'>Heros List</a>
+   <a routerLink='/admin' routerLinkActive='active'>Admin</a>
+   <a routerLink='/angular-forms' routerLinkActive="active">Angular Forms</a>
+   <a routerLink='/angular-basics' routerLinkActive="active">Angular Basic Concepts</a>
+   <a routerLink='/DependencyInjection' routerLinkActive="active">Dependency Injection</a>
+   <a routerLink='/httpVerbs' routerLinkActive="active">Http Verbs</a>  
+   <a routerLink='/animation' routerLinkActive="active">Angular Animation</a>
+</nav>
+<router-outlet></router-outlet>
+<router-outlet name="popup"></router-outlet>
+<div class="jumbotron text-center">
+   <h1>Bootstrap 4</h1>
+</div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-lg-4">col1</div>
+      <div class="col-lg-4">col2</div>
+      <div class="col-lg-4">col3</div>
+      <div class="col-lg-4">col4</div>
+    </div>
+</div>
