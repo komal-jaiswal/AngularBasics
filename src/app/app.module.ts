@@ -22,6 +22,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { MainanimationComponent } from './AngularAnimation/mainanimation/mainanimation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AngularanimationModule} from './AngularAnimation/angularanimation/angularanimation.module';
+import { ObservablesComponent } from './observables/observables.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {AngularanimationModule} from './AngularAnimation/angularanimation/angula
     DIProviderParentComponent,
     DIProviderChildComponent,
     MainanimationComponent,
+    ObservablesComponent,
    
   ],
   imports: [
@@ -61,3 +63,4 @@ import {AngularanimationModule} from './AngularAnimation/angularanimation/angula
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//hello added comment for git testing purpose

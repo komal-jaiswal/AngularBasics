@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MainanimationComponent} from '../mainanimation/mainanimation.component';
+import { MainanimationComponent } from '../mainanimation/mainanimation.component';
 
 
 const routes: Routes = [
-  {path:'animation',component:MainanimationComponent}
+  { path: 'animation', component: MainanimationComponent }
 ];
 
 @NgModule({

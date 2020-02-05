@@ -20,6 +20,7 @@ export class HerosListComponent implements OnInit {
   //   { day: 'Fri' },
   // ];
   daysPerweekGBR=['Mon','Tue','Wed','Thur','Fri'];
+  listofJumpToSearch=['select','Yes','No'];
   selectedArr = [];
   heroes: Hero[];
   searchTerm: string;
@@ -32,6 +33,9 @@ export class HerosListComponent implements OnInit {
     this.selectedHero = +this.actRoute.snapshot.paramMap.get('id');
   }
 
+  showList(event:any,index:number){
+
+  }
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);

@@ -1,4 +1,26 @@
 <button (click)="toggle()">Toggle Open/Closed</button>
-<div [@open-close]="isOpen ? 'open':'close'" class="open-close-container">
-    <p>the box is now {{isOpen ? 'open' : 'close'}}!</p>
+<div [@.disabled]='isDisabled'>
+<div [@keyframe-pulsation]="isOpen ? 'active':'passive'" 
+
+(@open-close.start)="onAnimationEvent($event)"
+(@open-close.done)="onAnimationEvent($event)">
+    <p>the box is now {{isOpen ? 'open' : 'closed'}}!</p>
+    {{isOpen}}
+</div>
+</div>
+<input type="textbox" [(ngModel)]="heroName">
+<button type="button" (click)="add()">Add Hero</button>
+<div *ngIf="heroList">
+    <ul *ngFor="let item of heroList;let index">
+        <li [@flyInOut] (click)="remove(index)">{{item.name}}</li>
+    </ul>
+</div>
+<button type="button" (click)="myMethod()">click me</button>
+<div @myInsertRemoveTrigger *ngIf="isShown" class="insert-remove-container">
+    <p>box is inserted</p>
+</div>
+<!--* Keyframes with a pulsation-->
+
+<div >
+    Hello
 </div>

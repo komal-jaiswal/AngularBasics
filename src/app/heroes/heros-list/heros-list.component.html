@@ -5,6 +5,28 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+<table>
+  <tbody>
+    <tr>
+      <th>component</th>
+      <th>Jump to search</th>
+      <th>List of Heroes</th>
+    </tr>
+    <tr *ngFor="let hero of daysPerweekGBR; let i=index">
+      <td>{{hero}}</td>
+      <td>
+        <select (change)="showList($event,i)">
+          <option *ngFor="let list of listofJumpToSearch">{{list}}</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option *ngFor="let hero of heroes">{{hero}}</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
 <!-- <div class="form-group">
   <label>New Hours Per Day</label>
   <div *ngFor='let days of daysPerweek; let i=index'>

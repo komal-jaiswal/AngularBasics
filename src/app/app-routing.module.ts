@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DIProviderComponent } from './DependencyInjection/di-provider.component';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 
 const routes: Routes = [
   { path: 'DependencyInjection', component: DIProviderComponent },
+  { path: 'observables', component: ObservablesComponent },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule)

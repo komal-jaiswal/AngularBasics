@@ -10,10 +10,10 @@ export class FormcontrolComponent implements OnInit {
 
   constructor() { }
   name = new FormControl('');
- update(){
-   this.name.setValue("Henry");
-   console.log(this.name.status);
- }
+  update() {
+    this.name.setValue("Henry");
+    console.log(this.name.status);
+  }
   ngOnInit() {
   }
 
