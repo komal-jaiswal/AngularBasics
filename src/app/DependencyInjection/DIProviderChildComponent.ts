@@ -15,7 +15,7 @@ import { DIServiceService } from './diservice.service';
     padding:10px;
 }
   `],
-  viewProviders:[DIServiceService]
+ // viewProviders:[DIServiceService]
 })
 export class DIProviderChildComponent implements OnInit {
 
