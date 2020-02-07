@@ -17,19 +17,40 @@ observer ={
 }
 //we have to use observables subscribe() and pass observer as an arg
 getData(){
+  console.log("passing observer as arg to subscribe method");
   this.service.myObservable.subscribe(this.observer);
 }
 //or subscribe method can accept callback function also
 getDataSubscribeCallback(){
+  console.log("passing observer as calback to subscribe method")
   this.service.myObservable.subscribe(
     x=>console.log("observer got next value :"+x),
     err=>console.log("observer got error" + err),
     ()=>console.log("observer got complete notification")
   )
 }
+
+//here will  subscribe to it
+
+getUsingObservableConstructor(){
+  this.service.sequence.subscribe({
+    next(num){console.log(num);},
+    complete(){console.log("observable completed");}
+  })
+}
+
+singleSubscriber(){
+  this.service.singleSequenceSubscriber.subscribe({
+    next(num){console.log(num);},
+    complete(){console.log("observable complete single subscriber");}
+  })
+}
+
   ngOnInit() {
     this.getData();
     this.getDataSubscribeCallback();
+    this.getUsingObservableConstructor();
+    this.singleSubscriber();
   }
 
 }
