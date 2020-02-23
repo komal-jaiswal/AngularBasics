@@ -23,6 +23,7 @@ import { MainanimationComponent } from './AngularAnimation/mainanimation/mainani
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AngularanimationModule} from './AngularAnimation/angularanimation/angularanimation.module';
 import { ObservablesComponent } from './observables/observables.component';
+import { ObservableCreationUsingRXJSComponent } from './observables/RXJS_Library/observable-creation-using-rxjs/observable-creation-using-rxjs.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ObservablesComponent } from './observables/observables.component';
     DIProviderChildComponent,
     MainanimationComponent,
     ObservablesComponent,
+    ObservableCreationUsingRXJSComponent,
    
   ],
   imports: [

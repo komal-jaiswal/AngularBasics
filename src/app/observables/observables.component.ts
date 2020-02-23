@@ -46,6 +46,8 @@ singleSubscriber(){
   })
 }
 
+//creating observables using RXJS library
+
   ngOnInit() {
     this.getData();
     this.getDataSubscribeCallback();
