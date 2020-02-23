@@ -1,4 +1,4 @@
 export interface Config{
     heroesUrl:string;
-    textfile:string;
+    textFile:string;
 }

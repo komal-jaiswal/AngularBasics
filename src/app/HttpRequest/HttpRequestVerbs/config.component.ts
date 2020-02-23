@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../configService';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, throwError } from 'rxjs';
 import { Employee } from '../employee';
 import { Config } from '../config';
+import { error } from 'protractor';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Component({
@@ -15,14 +18,15 @@ export class ConfigComponent implements OnInit {
   constructor(private configService: ConfigService) { }
   configSubscriptio: Subscription;
   ngOnInit() {
-    debugger;
     this.getProducts();
-
+    this.showConfig();
+    this.download();
   }
   config: Config;
   display = false;
   displayFilterStatus = false;
   header: any[];
+  contents: string;
   error: Error;
   productInfo: any;
   public employees: Employee[];
@@ -30,6 +34,23 @@ export class ConfigComponent implements OnInit {
   private _searchTerm: string;
   filteredEmployees: Employee[];
 
+  showConfig() {
+    this.configService.getConfig().subscribe(resp => {
+      const key = resp.headers.keys();
+      this.header = key.map(key => {
+        '${key} : ${resp.headers.get(key)}'
+      });
+      // this.config={...resp.body};
+    });
+  }
+
+  download() {
+    this.configService.download('../../assets/textFile.txt').subscribe(
+      result => this.contents = result,
+      error => console.log(error)//second callback to the observables to handle th error
+    );
+    console.log(this.contents);
+  }
 
   getProducts() {
     this.configSubscriptio = this.configService.getEmployees().subscribe((empList) => {
@@ -39,7 +60,6 @@ export class ConfigComponent implements OnInit {
     });
   }
   getEmployeeJSON() {
-    debugger;
     this.configSubscriptio = this.configService.getEmployeeJSONObject().subscribe((empList) => {
       this.employeeJSONObject = empList;
     });
@@ -51,12 +71,10 @@ export class ConfigComponent implements OnInit {
   }
 
   set searchTerm(value: string) {
-    debugger;
     this._searchTerm = value;
     this.filteredEmployees = this.getFilteredEmployees(value);
   }
   filter(displayVal: boolean) {
-    debugger;
     this.display = displayVal;
 
   }
@@ -65,7 +83,6 @@ export class ConfigComponent implements OnInit {
   }
 
   getFilteredEmployees(stringValue: string): Employee[] {
-    debugger;
     if (!this.employees || !this.searchTerm) {
       return this.employees;
     }
@@ -74,12 +91,28 @@ export class ConfigComponent implements OnInit {
     //return this.filteredEmployees.filter(emp=>emp.name.toLocaleLowerCase().indexOf(stringValue.toLocaleLowerCase()) !== -1);
   }
   displayModal() {
-    debugger;
     this.display = true;
   }
 
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      //client side error
+      console.log("An error occured", error.error.message);
+    }
+    else {
+      //backend returned error
+      console.error(
+        `Backend returned error code ${error.status}` +
+        `Status is ${error.statusText}` +
+        `error body is ${error.error}`
+      )
+    }
+    return throwError(
+      'something happened please try again');
+  }
+
+
   //   showConfig() {
-  //     debugger;
   //    // this.configService.get_products();
   //     this.configService.getConfig().subscribe(resp => {
   //       const keys=resp.headers.keys();
@@ -95,7 +128,6 @@ export class ConfigComponent implements OnInit {
 
   // }
   // showProducts() {
-  //   debugger;
   //  // this.configService.get_products();
   //   this.configService.get_products().subscribe(resp => {
   //     const keys=resp.headers.keys();

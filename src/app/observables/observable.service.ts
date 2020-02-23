@@ -40,6 +40,6 @@ export class ObservableService {
   }
   singleSequenceSubscriber =new Observable(this.sequenceSingleSubscriber);
 
-  data=from(fetch('/api/endpoint'));
+  //data=from(fetch('/api/endpoint'));
   constructor() { }
 }
